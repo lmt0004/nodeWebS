@@ -1,0 +1,31 @@
+/* Estilo para el contenedor de la tarjeta */
+body{
+    border: 1px solid #ddd; /* Borde delgadp */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin: 10px; /* Márgenes externos */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #fff; /* Color de fondo blanco */
+  }
+  
+  /* Estilo para el encabezado de la tarjeta (h2) */
+   h2 {
+    color: #333; /* Color del texto */
+    font-size: 1.5em; /* Tamaño de la fuente del encabezado */
+    margin-bottom: 10px; /* Márgenes inferiores */
+  }
+  
+  /* Estilo para el párrafo de la tarjeta (p) */
+   p {
+    color: #666; /* Color del texto */
+    font-size: 1em; /* Tamaño de la fuente del párrafo */
+    line-height: 1.4; /* Altura de línea para una mejor legibilidad */
+  }
+  hr {
+    position: relative;
+    top: 20px;
+    border: none;
+    height: 12px;
+    background: black;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del JSON</title>
+    <!-- Agrega el enlace al archivo de estilo de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Cursive', sans-serif;
+            color: #000;
+        }
+
+        .producto {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .producto img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .producto:hover img {
+            transform: scale(1.5);
+        }
+
+        .producto:hover {
+            overflow: visible;
+        }
+
+        .producto h3 {
+            color: #000;
+            font-size: 32px; /* Tamaño de fuente más grande */
+            font-family: 'Arial', sans-serif; /* Cambia la fuente */
+            font-style: italic; /* Pone el texto en cursiva */
+            font-weight: bold; /* Hace el texto más relleno */
+            margin-bottom: 5px;
+        }
+
+        .producto p {
+            font-size: 18px; /* Tamaño de fuente más grande */
+            font-weight: bold;
+            color: #000;
+        }
+
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 32px; /* Tamaño de fuente más grande para el título */
+            font-family: 'Arial', sans-serif; /* Cambia la fuente */
+            font-style: italic; /* Pone el texto en cursiva */
+            font-weight: bold; /* Hace el texto más relleno */
+        }
+
+        .navbar-logo {
+            max-width: 80px; /* Ajusta el tamaño del logo según sea necesario */
+            margin-right: 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: chocolate;
+        }
+        iframe{
+            display: block;
+    margin: auto; }
+
+        @media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 24px; /* Reduce el tamaño de la fuente del logo en dispositivos móviles */
+    }
+
+    .navbar-logo {
+        max-width: 60px; /* Ajusta el tamaño del logo en dispositivos móviles */
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px; /* Reduce el tamaño de la fuente de los enlaces de navegación en dispositivos móviles */
+        margin-right: 10px;
+    }
+
+    .producto {
+        flex-direction: column; /* Cambia la dirección del flujo de la columna a fila en dispositivos móviles */
+        align-items: center; /* Centra los elementos en dispositivos móviles */
+        overflow: visible; /* Permite que la imagen crezca fuera del contenedor en dispositivos móviles */
+        margin-right: 0; /* Elimina el margen derecho en dispositivos móviles */
+        padding: 15px; /* Ajusta el relleno en dispositivos móviles */
+    }
+
+    .producto img {
+        max-width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor en dispositivos móviles */
+        margin-bottom: 10px; /* Añade un margen inferior a la imagen en dispositivos móviles */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .producto:hover img {
+        transform: scale(1); /* Revierte la escala en el hover en dispositivos móviles */
+    }
+}
+    </style>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Barra de navegación de Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Logo a la izquierda -->
+        <a class="navbar-brand" href="#">
+            <img src="https://img.freepik.com/vector-premium/logo-blanco-negro-letra-n-sobre-fondo-negro_853558-1093.jpg" alt="Logo" class="navbar-logo">
+            TrajeTrend
+        </a>
+        <!-- Botón de hamburguesa para pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Enlaces de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./noticias.html">Noticias</a>
+                </li>
+            </li>
+            <a class="nav-link" href="./indexAtom.html">Noticias Atom</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido de la página -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Columna 1 -->
+        <div class="col-md-6">
+            <div id="informacion-productos-columna1"></div>
+        </div>
+        <!-- Columna 2 -->
+        <div class="col-md-6">
+            <div id="informacion-productos-columna2"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Agrega los scripts de Bootstrap y Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+
+<!-- Tu script JavaScript -->
+<script>
+   $.ajax({
+      url: '/productos',
+      type: 'GET',
+      dataType: 'json',
+      success: function (data) {
+        // Llamar a la función para generar productos después de la carga
+        mostrarInformacion(data);
+      },
+      error: function (error) {
+        console.error('Error al obtener los productos:', error);
+        // Manejar el error en consecuencia
+      }
+    });
+   
+
+    function mostrarInformacion(productos) {
+        var contenedorColumna1 = document.getElementById("informacion-productos-columna1");
+        var contenedorColumna2 = document.getElementById("informacion-productos-columna2");
+
+        productos.forEach(function(producto, index) {
+            var divProducto = document.createElement("div");
+            divProducto.classList.add("producto");
+
+            var imagen = document.createElement("img");
+            imagen.src = producto["imagen-src"];
+            imagen.alt = producto.titulo;
+            imagen.classList.add("img-fluid");
+
+            var contenido = document.createElement("div");
+
+            var titulo = document.createElement("h3");
+            titulo.textContent = producto.titulo;
+
+            var precio = document.createElement("p");
+            precio.textContent = "Precio: " + producto.precio;
+
+            contenido.appendChild(titulo);
+            contenido.appendChild(precio);
+
+            divProducto.appendChild(imagen);
+            divProducto.appendChild(contenido);
+
+            // Decide en qué columna colocar el producto
+            if (index % 2 === 0) {
+                contenedorColumna1.appendChild(divProducto);
+            } else {
+                contenedorColumna2.appendChild(divProducto);
+            }
+        });
+    }
+  
+
+</script>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12404.248084625922!2d-1.8630136296732815!3d38.9910808489368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd665fbe33499e27%3A0x9f1e9a7e5daa5143!2sPull%26Bear!5e0!3m2!1ses!2ses!4v1705975500656!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>
